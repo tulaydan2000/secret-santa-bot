@@ -1,12 +1,12 @@
 import asyncio
 import logging
+import os
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 
-# ВКЛЮЧАЕМ ЛОГИ ДЛЯ ОТЛАДКИ
 logging.basicConfig(level=logging.INFO)
 
-TOKEN = "8366341609:AAFsaIwDzrtTvvwHf4Cv0OsTLFuTS-5q8mg"
+TOKEN = os.getenv("TOKEN")  # ← Теперь берёт из переменной Render
 
 pairs = {
     "yue_liaaang": "teacher_25rus",
@@ -39,4 +39,5 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
 
